@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlurPresentationSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCJ-zL-9Sj">
+                                <rect key="frame" x="16" y="571" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.77569133040000005" green="0.46920943259999998" blue="0.86830776929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LW5-Yn-5D2"/>
+                                </constraints>
+                                <state key="normal" title="Present">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Hh9-4V-yOa" kind="show" id="hjw-6p-SqN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uCJ-zL-9Sj" secondAttribute="trailing" constant="16" id="3Sh-Ej-FHs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uCJ-zL-9Sj" secondAttribute="bottom" constant="48" id="eMZ-Kf-XJe"/>
+                            <constraint firstItem="uCJ-zL-9Sj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="jvj-P1-ouq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--New View Controller-->
+        <scene sceneID="j8q-T1-1dc">
+            <objects>
+                <viewController id="Hh9-4V-yOa" customClass="NewViewController" customModule="BlurPresentationSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bp8-iK-Hra"/>
+                        <viewControllerLayoutGuide type="bottom" id="mPy-6m-h5I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="waQ-A6-p6z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-mc-v8Y">
+                                <rect key="frame" x="16" y="571" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.13927786898408107" blue="0.160136421319797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="IVb-Xt-VUO"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDismiss:" destination="Hh9-4V-yOa" eventType="touchUpInside" id="gwy-8K-cxl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JnK-pw-gbI">
+                                <rect key="frame" x="87" y="116" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="I6F-tO-Ch5"/>
+                                    <constraint firstAttribute="height" constant="200" id="pbV-lA-Tlv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WcF-mc-v8Y" secondAttribute="trailing" constant="16" id="5GP-BV-bJP"/>
+                            <constraint firstItem="mPy-6m-h5I" firstAttribute="top" secondItem="WcF-mc-v8Y" secondAttribute="bottom" constant="48" id="J0G-wr-WYo"/>
+                            <constraint firstItem="JnK-pw-gbI" firstAttribute="top" secondItem="bp8-iK-Hra" secondAttribute="bottom" constant="96" id="QrJ-pd-IjP"/>
+                            <constraint firstItem="JnK-pw-gbI" firstAttribute="centerX" secondItem="waQ-A6-p6z" secondAttribute="centerX" id="UO7-2K-sDh"/>
+                            <constraint firstItem="WcF-mc-v8Y" firstAttribute="leading" secondItem="waQ-A6-p6z" secondAttribute="leading" constant="16" id="u3t-HB-wbL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXc-6A-S2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="36"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="200" height="200"/>
+    </resources>
 </document>
